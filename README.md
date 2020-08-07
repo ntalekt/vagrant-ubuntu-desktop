@@ -15,5 +15,10 @@ A simple Vagrantfile to setup Ubuntu desktop environment with Google Chrome and 
 
 ### Usage
 
-    vagrant up
-    vagrant destroy -f
+-   Requires VirtualBox
+        vagrant up vagrant up --provider=virtualbox
+        vagrant destroy -f
+
+-   Requires <https://github.com/josenk/vagrant-vmware-esxi>
+        vagrant up --provider=vmware_esxi
+        vagrant destroy -f

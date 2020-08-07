@@ -1,5 +1,5 @@
 Vagrant.configure("2") do |config|
-  config.vm.box = "ubuntu/bionic64"
+  config.vm.box = "generic/ubuntu1804"
 
   #
   #  Provider (virtualbox) settings
@@ -14,6 +14,22 @@ Vagrant.configure("2") do |config|
     override.vm.provision "virtualbox tools", type: "shell",
         path: "scripts/virtualbox_tools.sh"
   end
+
+  #
+  #  Provider (esxi) settings
+  #
+  config.vm.provider :vmware_esxi do |esxi, override|
+    esxi.esxi_hostname = Secret.esxi_hostname
+    esxi.esxi_username = Secret.esxi_username
+    esxi.esxi_password = Secret.esxi_password
+    esxi.esxi_virtual_network = ['VM Network']
+    esxi.esxi_disk_store = 'datastore1'
+    esxi.guest_name = 'vagrant-ubuntu-desktop'
+    esxi.guest_memsize = '2048'
+    esxi.guest_numvcpus = '2'
+    esxi.guest_boot_disk_size = 30
+    override.vm.provision "vmware tools", type: "shell",
+        path: "scripts/vmware_tools.sh"
   end
 
   # Currently "ubuntu/bionic64" on VirtualBox requires `type: "virtualbox"`
