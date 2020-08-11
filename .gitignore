@@ -1,2 +1,4 @@
 .vagrant
+bin/
 *.log
+id_*
