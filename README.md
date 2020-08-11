@@ -5,24 +5,23 @@ A simple Vagrantfile to setup Ubuntu desktop environment with Google Chrome and 
 ### Installs
 
 -   Chrome
--   Chromium
 -   Firefox
 -   git
 -   VS Code
 -   gnome-shell-extensions
 -   gnome-tweak-tool
--   gitkraken
+* Ops-Manager CLI - https://github.com/pivotal-cf/om
+* TKGI CLI - https://docs.pivotal.io/tkgi/1-8/installing-cli.html
+* kubectl-cli - https://docs.pivotal.io/tkgi/1-8/installing-kubectl-cli.html
 
 ### Usage
-
--   Requires VirtualBox
-```
-vagrant up vagrant up --provider=virtualbox
-vagrant destroy -f
-```
-
--   Requires <https://github.com/josenk/vagrant-vmware-esxi>
+-   Requires - <https://github.com/josenk/vagrant-vmware-esxi>
 ```
 vagrant up --provider=vmware_esxi
+vagrant destroy -f
+```
+-   Requires VirtualBox
+```
+vagrant up --provider=virtualbox
 vagrant destroy -f
 ```
