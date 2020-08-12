@@ -27,6 +27,8 @@ then
     # kubectl CLI - https://docs.pivotal.io/tkgi/1-8/installing-kubectl-cli.html
     chmod +x /vagrant/bin/kubectl-linux-amd64-1.17.8
     mv /vagrant/bin/kubectl-linux-amd64-1.17.8 /usr/local/bin/kubectl
+    chmod 600 /vagrant/id_rsa
+
 else
     echo "Cannot find binaries"
 fi
