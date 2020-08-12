@@ -22,3 +22,15 @@ echo -e "\e[33m**********\e[39mEnd GNOME tweaks\e[33m**********\e[39m"
 echo -e "\e[33m**********\e[39mBegin setting resolution\e[33m**********\e[39m"
 echo 'xrandr --size 1440x900' >> /home/vagrant/.profile
 echo -e "\e[33m**********\e[39mEnd setting resolution\e[33m**********\e[39m"
+
+# configure the motd.
+# NB this was generated at http://patorjk.com/software/taag/#p=display&f=Star%20Wars&t=desktop
+cat > /etc/motd <<'EOF'
+ _______   _______     _______. __  ___ .___________.  ______   .______
+|       \ |   ____|   /       ||  |/  / |           | /  __  \  |   _  \
+|  .--.  ||  |__     |   (----`|  '  /  `---|  |----`|  |  |  | |  |_)  |
+|  |  |  ||   __|     \   \    |    <       |  |     |  |  |  | |   ___/
+|  '--'  ||  |____.----)   |   |  .  \      |  |     |  `--'  | |  |
+|_______/ |_______|_______/    |__|\__\     |__|      \______/  | _|
+                                                                         
+EOF
