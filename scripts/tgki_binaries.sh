@@ -29,6 +29,14 @@ then
     mv /vagrant/bin/kubectl-linux-amd64-1.17.8 /usr/local/bin/kubectl
     chmod 600 /vagrant/id_rsa
 
+    #
+    # kubectl autocompletion
+    #
+    echo -e "\e[33m**********\e[39mBegin kubectl autocompletion\e[33m**********\e[39m"
+    echo 'source <(kubectl completion bash)' >> /home/vagrant/.dotfiles/.bashrc
+    kubectl completion bash >/etc/bash_completion.d/kubectl
+    echo -e "\e[33m**********\e[39mEnd kubectl autocompletion\e[33m**********\e[39m"
+
 else
     echo "Cannot find binaries"
 fi
