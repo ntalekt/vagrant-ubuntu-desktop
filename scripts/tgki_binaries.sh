@@ -27,15 +27,16 @@ then
     #
     # tkgi CLI - https://docs.pivotal.io/tkgi/1-8/installing-cli.html
     #
-    chmod +x /vagrant/bin/tkgi-linux-amd64-1.8.0-build.75
-    mv /vagrant/bin/tkgi-linux-amd64-1.8.0-build.75 /usr/local/bin/tkgi
+    TKGIFILE=$(ls /vagrant/bin/ | grep tkgi)
+    chmod +x /vagrant/bin/${TKGIFILE}
+    mv /vagrant/bin/${TKGIFILE} /usr/local/bin/tkgi
 
     #
     # kubectl CLI - https://docs.pivotal.io/tkgi/1-8/installing-kubectl-cli.html
     #
-    chmod +x /vagrant/bin/kubectl-linux-amd64-1.17.8
-    mv /vagrant/bin/kubectl-linux-amd64-1.17.8 /usr/local/bin/kubectl
-    chmod 600 /vagrant/id_rsa
+    KUBECTLFILE=$(ls /vagrant/bin/ | grep kube)
+    chmod +x /vagrant/bin/${KUBECTLFILE}
+    mv /vagrant/bin/${KUBECTLFILE} /usr/local/bin/kubectl
 
     #
     # kubectl autocompletion
@@ -44,6 +45,11 @@ then
     echo 'source <(kubectl completion bash)' >> /home/vagrant/.dotfiles/.bashrc
     kubectl completion bash >/etc/bash_completion.d/kubectl
     echo -e "\e[33m**********\e[39mEnd kubectl autocompletion\e[33m**********\e[39m"
+
+    #
+    # Change perms on key
+    #
+    chmod 600 /vagrant/id_rsa
 
 else
     echo "Cannot find binaries"
