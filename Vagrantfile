@@ -76,12 +76,14 @@ Vagrant.configure("2") do |config|
       args: args
 
   args = []
+  config.vm.provision "netplan", type: "shell",
+      path: "scripts/netplan.sh",
+      args: args
+
+  args = []
   config.vm.provision "reboot", type: "shell",
       path: "scripts/reboot.sh",
       args: args
 
-  args = []
-  config.vm.provision "post reboot", type: "shell",
-      path: "scripts/post_reboot.sh",
-      args: args
+
 end
