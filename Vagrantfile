@@ -6,6 +6,7 @@ Vagrant.configure("2") do |config|
   #  Provider (esxi) settings
   #
   config.vm.provider :vmware_esxi do |esxi, override|
+    # https://github.com/tcnksm/vagrant-secret
     esxi.esxi_hostname = Secret.esxi_hostname
     esxi.esxi_username = Secret.esxi_username
     esxi.esxi_password = Secret.esxi_password
