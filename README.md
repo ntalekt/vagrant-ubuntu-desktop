@@ -21,8 +21,10 @@ A simple Vagrantfile to setup Ubuntu desktop environment with Google Chrome and 
 ## Requirements
 
 1. You'll need vagrant installed: <https://vagrantup.com/downloads.html>
+   * vagrant versions 2.2.x+
 2. You'll need the vagrant-vmware-esxi plugin installed & configured: <https://github.com/josenk/vagrant-vmware-esxi>
 3. Update the desktops network parameters: `config\01-netcfg.yaml`
+4. An ESXi server
 
 ## Usage
 
