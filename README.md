@@ -36,7 +36,12 @@ A simple Vagrantfile to setup Ubuntu desktop environment with Google Chrome and 
     VMware ovftool 4.4.3 (build-18663434)
     ```
 
-4. network parameters: `config\01-netcfg.yaml`
+4. network parameters example: `config\01-netcfg.yaml.example`
+
+    ```bash
+    mv 01-netcfg.yaml.example 01-netcfg.yaml
+    ```
+
 5. an ESXi server
 
 ## Usage

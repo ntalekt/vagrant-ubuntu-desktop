@@ -1,5 +1,5 @@
 .vagrant
 bin/
-config/
+config/01-netcfg.yaml
 *.log
 id_*
