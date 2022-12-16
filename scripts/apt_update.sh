@@ -12,7 +12,8 @@ sudo dpkg-reconfigure debconf -f noninteractive -p critical
 echo -e "\e[33m**********\e[39mBegin installing needed updates\e[33m**********\e[39m"
 sudo apt-get update -y
 sudo apt-get upgrade -y
-sudo apt-get install gnupg2 jq curl git -y
+sudo apt-get install gnupg2 jq curl git software-properties-common python3 python-pip -y
+sudo pip install pywinrm
 echo -e "\e[33m**********\e[39mEnd installing needed updates\e[33m**********\e[39m"
 
 #

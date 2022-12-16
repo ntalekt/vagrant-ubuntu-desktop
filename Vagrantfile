@@ -13,8 +13,8 @@ Vagrant.configure("2") do |config|
     esxi.esxi_virtual_network = ['VM Management']
     esxi.esxi_disk_store = 'datastore1'
     esxi.guest_name = 'vagrant-ubuntu-desktop'
-    esxi.guest_memsize = '1024'
-    esxi.guest_numvcpus = '1'
+    esxi.guest_memsize = '4096'
+    esxi.guest_numvcpus = '2'
     #esxi.guest_boot_disk_size = 30
     override.vm.provision "vmware tools", type: "shell",
         path: "scripts/vmware_tools.sh"
@@ -25,8 +25,8 @@ Vagrant.configure("2") do |config|
   #
   config.vm.provider :virtualbox do |v, override|
     v.gui = true
-	  v.cpus = 1
-    v.memory = 1024
+	  v.cpus = 2
+    v.memory = 4096
 	  v.name = "vagrant-ubuntu-desktop"
 	  v.default_nic_type = "82543GC"
 	  v.customize ['modifyvm', :id, '--clipboard-mode', 'bidirectional']
@@ -61,6 +61,16 @@ Vagrant.configure("2") do |config|
       args: args
 
   args = []
+  config.vm.provision "ansible install", type: "shell",
+      path: "scripts/ansible.sh",
+      args: args
+
+  args = []
+  config.vm.provision "packer terraform install", type: "shell",
+      path: "scripts/packer_terraform.sh",
+      args: args
+    
+  args = []
   config.vm.provision "firefox install", type: "shell",
       path: "scripts/firefox.sh",
       args: args
@@ -68,11 +78,6 @@ Vagrant.configure("2") do |config|
   args = []
   config.vm.provision "dotfiles install", type: "shell",
       path: "scripts/dotfiles.sh",
-      args: args
-
-  args = []
-  config.vm.provision "tgki binaries", type: "shell",
-      path: "scripts/tgki_binaries.sh",
       args: args
 
   args = []
