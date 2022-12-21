@@ -19,5 +19,5 @@ echo -e "\e[33m**********\e[39mEnd Ansible install\e[33m**********\e[39m"
 # Install ansible collections
 #
 echo -e "\e[33m**********\e[39mBegin Ansible install collections\e[33m**********\e[39m"
-sudo ansible-galaxy collection install community.windows ansible.windows ansible.posix
+sudo ansible-galaxy collection install community.windows community.vmware ansible.windows ansible.posix
 echo -e "\e[33m**********\e[39mEnd Ansible install collections\e[33m**********\e[39m"
