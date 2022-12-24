@@ -13,7 +13,7 @@ echo -e "\e[33m**********\e[39mBegin installing needed updates\e[33m**********\e
 sudo apt-get update -y
 sudo apt-get upgrade -y
 sudo apt-get install gnupg2 jq curl git software-properties-common python3 python-pip -y
-sudo pip install pywinrm
+sudo pip install pywinrm PyVmomi
 echo -e "\e[33m**********\e[39mEnd installing needed updates\e[33m**********\e[39m"
 
 #
