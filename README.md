@@ -17,6 +17,7 @@ A simple Vagrantfile to setup Ubuntu desktop environment with Google Chrome and 
 * HashiCorp
   * packer
   * terraform
+* GCP CLI
 
 ## Requirements
 

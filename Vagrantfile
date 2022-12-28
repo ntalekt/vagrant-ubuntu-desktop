@@ -69,6 +69,11 @@ Vagrant.configure("2") do |config|
   config.vm.provision "packer terraform install", type: "shell",
       path: "scripts/packer_terraform.sh",
       args: args
+
+  args = []
+  config.vm.provision "gcp cli install", type: "shell",
+      path: "scripts/gcloud_cli.sh",
+      args: args
     
   args = []
   config.vm.provision "firefox install", type: "shell",
