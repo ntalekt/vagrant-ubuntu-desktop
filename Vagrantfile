@@ -13,8 +13,8 @@ Vagrant.configure("2") do |config|
     esxi.esxi_virtual_network = ['VM Management']
     esxi.esxi_disk_store = 'datastore1'
     esxi.guest_name = 'vagrant-ubuntu-desktop'
-    esxi.guest_memsize = '4096'
-    esxi.guest_numvcpus = '2'
+    esxi.guest_memsize = '8192'
+    esxi.guest_numvcpus = '4'
     #esxi.guest_boot_disk_size = 30
     override.vm.provision "vmware tools", type: "shell",
         path: "scripts/vmware_tools.sh"
